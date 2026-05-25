@@ -1,3 +1,14 @@
+# Matroid
+
+## Fork Notice
+
+This repository is a fork/snapshot of Prof. Peter Nelson's [`apnelson1/Matroid`](https://github.com/apnelson1/Matroid), licensed under Apache-2.0.
+
+We use it as infrastructure for Lean challenge formalizations involving matroid theory. The original README content is preserved below for attribution and context.
+
+---
+## Readme
+
 This repo is aiming to formalize the bread and butter of matroid theory in lean4.
 The goal is eventually to have is all included in the lean4 math library : 
 https://github.com/leanprover-community/mathlib4
