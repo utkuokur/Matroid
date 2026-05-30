@@ -76,11 +76,9 @@ lemma isHyperplane_iff_maximal_nonspanning :
       (M.closure_subset_ground _).ssubset_of_ne ?_⟩)
   rwa [spanning_iff, and_iff_left hSE] at hS
 
-end Matroid 
-
 /-- For two subsets of a given set `S`, the set differences `S \ X` and `S \ Y`
 are equal iff `X` and `Y` are equal. -/
-private lemma sdiff_right_inj {α : Type*} {S X Y : Set α}
+private lemma sdiff_right_inj {S X Y : Set α}
     (hX : X ⊆ S) (hY : Y ⊆ S) : S \ X = S \ Y ↔ X = Y := by
   refine ⟨fun h => ?_, fun h => h ▸ rfl⟩
   ext x
@@ -93,8 +91,6 @@ private lemma sdiff_right_inj {α : Type*} {S X Y : Set α}
     have hx : x ∈ S \ X := ⟨hY hxY, hxX⟩
     rw [h] at hx
     exact hx.2 hxY
-
-namespace Matroid
 
 @[simp]
 lemma isCocircuit_compl_iff_isHyperplane (hH : H ⊆ M.E := by aesop_mat) :
