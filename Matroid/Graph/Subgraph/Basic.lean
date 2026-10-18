@@ -199,7 +199,7 @@ lemma setLinkEdges_eq_inter_of_le' (hle : G ≤ H) (S) : δ(G, S) = E(G) ∩ δ(
   grind
 
 instance [Finite α] [Finite β] : WellFoundedLT (Graph α β) :=
-  ⟨Subrelation.wf sum_ncard_lt_of_lt (measure fun (G : Graph α β) => V(G).ncard + E(G).ncard).2⟩
+  Subrelation.wf sum_ncard_lt_of_lt (measure fun (G : Graph α β) => V(G).ncard + E(G).ncard).2
 
 /- TODO : Is is reasonable to only keep the `EqOn` versions of the above?
 Also, what about functional `≤` versions? -/

@@ -275,7 +275,6 @@ lemma eq_sUnion_components (G : Graph α β) : G = Graph.sUnion G.Components
   apply_fun Subtype.val at h
   rw [ClosedSubgraph.coe_sSup, eq_comm] at h
   convert h
-  · rfl
   ext H
   simp only [mem_components_iff_isCompOf, ClosedSubgraph.isAtom_iff_isCompOf, mem_image,
     mem_ofPred_eq, Subtype.exists, exists_and_left, exists_prop, exists_eq_right_right,

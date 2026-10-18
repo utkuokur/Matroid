@@ -214,9 +214,9 @@ lemma Projectivization.Subspace.mem_span_iff_rep (K : Type*) {V : Type*} [Field 
     [Module K V] (s : Set (Projectivization K V)) (b : Projectivization K V) :
     b ∈ Subspace.span s ↔ b.rep ∈ Submodule.span K (Projectivization.rep '' s) := by
   refine ⟨fun h ↦ ?_, fun h ↦ ?_⟩
-  · induction h with
-  | of x hxs => exact mem_of_mem_of_subset (mem_image_of_mem _ hxs) Submodule.subset_span
-  | mem_add x₁ x₂ hx₁0 hx₂0 hx₁x₂ hx₁ hx₂ hx₁' hx₂' =>
+  · induction h using Projectivization.Subspace.span_induction with
+  | of_mem x hxs => exact mem_of_mem_of_subset (mem_image_of_mem _ hxs) Submodule.subset_span
+  | add x₁ x₂ hx₁0 hx₂0 hx₁x₂ hx₁ hx₂ hx₁' hx₂' =>
     simp only [Submodule.mk_rep_mem_iff_mem] at hx₁' hx₂' ⊢
     exact Submodule.add_mem _ hx₁' hx₂'
   suffices aux : ∀ ⦃a⦄ (hasp : a ∈ Submodule.span K (Projectivization.rep '' s)) (ha : a ≠ 0),
